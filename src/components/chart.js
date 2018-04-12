@@ -1,7 +1,11 @@
-export default const Chart=(props)=>{
+import React from 'react';
+import { Sparklines ,SparklinesLine ,SparklinesReferenceLine  } from 'react-sparklines';
+const Chart=(props)=>{
   return (
-    <Sparklines data={[5, 10, 5, 20]}>
-      <SparklinesLine color="blue" />
-    </Sparklines>
+  <Sparklines data={props.data}>
+      <SparklinesLine color={props.color} />
+      <SparklinesReferenceLine type="avg" />
+  </Sparklines>
   )
 }
+export default Chart;
